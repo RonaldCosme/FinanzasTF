@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('src/assets/carousel/carro2.png'); /* Nueva imagen de fondo */
+  background-image: url('https://img.freepik.com/fotos-premium/coche-neon_928869-5673.jpg?w=360'); /* Nueva imagen de fondo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,7 +13,7 @@ body {
   align-items: center;
   height: 85vh;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para contraste */
+  background-color: rgba(201, 19, 140, 0.7); /* Fondo semi-transparente para contraste */
   border-radius: 15px; /* Bordes redondeados */
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */

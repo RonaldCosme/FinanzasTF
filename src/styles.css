@@ -228,7 +228,7 @@ html, body {
 body { 
   margin: 0; 
   font-family: Arial, sans-serif; /* Cambiado a Arial */
-  background: #E8EFF1; /* Nuevo color de fondo */
+  background: #698d97; /* Nuevo color de fondo */
 }
 
 /* Importar fuentes de Google Fonts */
@@ -246,10 +246,10 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-  background-color: #FFFFFF; /* Fondo blanco */
+  background-color: hsl(0, 0%, 100%); /* Fondo blanco */
   margin: 1.25rem 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
-  color: #495057;
+  color: #495057;            
 }
 
 /* Estilos para la cabecera de la tarjeta (.card-head) */
