@@ -1,93 +1,79 @@
+/* Estilos para dispositivos de ancho mayor a 1200px */
 @media (min-width: 1200px) {
   .container {
     max-width: 650px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
   }
 }
 
 mat-card-title {
-  position: relative;
   text-align: center;
-  font-size: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1rem;
-  margin-top: 8rem;
-
+  font-size: 28px; /* Tamaño de fuente reducido para mejor ajuste */
+  margin-top: 2rem; /* Espaciado superior ajustado */
 }
 
 .register-bg {
-  background-image: url('/src/assets/carousel/logo.png');
-  background-size: cover;
+  background-image: url('/src/assets/carousel/logo.png'); /* Manteniendo la imagen de fondo */
+  background-size: contain; /* Ajuste de tamaño de fondo */
   background-position: center;
 }
 
 .logo {
-  position: absolute;
-  top: -800%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 130px;
-  height: 130px;
+  width: 100px; /* Tamaño reducido */
+  height: 100px; /* Tamaño reducido */
   border-radius: 50%;
-
+  margin-bottom: 20px; /* Espaciado inferior */
 }
 
 mat-card-content {
   display: flex;
-  justify-content: center;
-  height: 100%;
-  overflow: hidden;
+  flex-direction: column; /* Alinear elementos verticalmente */
+  align-items: center; /* Centrar elementos horizontalmente */
+  margin-top: 1rem; /* Espaciado superior */
 }
 
 .card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más suave */
 }
 
+/* Estilos para botones */
+button[type="submit"], button[type="button"] {
+  width: 100%;
+  max-width: 450px; /* Ancho máximo */
+  padding: 12px 20px; /* Relleno */
+  border-radius: 8px; /* Bordes redondeados */
+  border: none; /* Sin bordes */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cursor tipo puntero */
+  margin-bottom: 10px; /* Espaciado entre botones */
+}
 
-
-
-/* Estilos para el botón "Ingresar" */
 button[type="submit"] {
-  background-color: #000000; /* Color de fondo cuando no se pasa el cursor */
-  color: #ffffff; /* Color del texto cuando no se pasa el cursor */
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  background-color: #4CAF50; /* Verde */
+  color: #ffffff;
 }
 
 button[type="submit"]:hover {
-  background-color: #7e0000; /* Color de fondo al pasar el cursor */
-  color: #ffffff; /* Color del texto al pasar el cursor */
+  background-color: #388E3C; /* Tono más oscuro al pasar el ratón */
 }
 
-/* Estilos para el botón "Registrarse" */
 button[type="button"] {
-  background-color: #ffffff; /* Color de fondo cuando no se pasa el cursor */
-  color: #000000; /* Color del texto cuando no se pasa el cursor */
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  background-color: #FFC107; /* Amarillo */
+  color: #000000;
 }
 
 button[type="button"]:hover {
-  background-color: #ffffff; /* Color de fondo al pasar el cursor */
-  color: #000000; /* Color del texto al pasar el cursor */
-}
-
-.d-flex {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente el contenido */
-  align-items: center; /* Centra verticalmente el contenido */
-}
-
-.vh-100 {
-  height: 100vh; /* Hace que el contenedor ocupe el 100% del alto de la ventana */
+  background-color: #FFB300; /* Tono más oscuro al pasar el ratón */
 }
 
 body {
-  margin: 0; /* Elimina el margen predeterminado del body */
-  padding: 0; /* Elimina el relleno predeterminado del body */
-  background-image: url('src/assets/carousel/carro2.png');
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #6DD5FA, #FF758C); /* Fondo degradado */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  font-family: 'Arial', sans-serif; /* Cambio de fuente */
 }
