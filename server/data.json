@@ -1,5 +1,5 @@
 {
-  "usuarios": [
+  "users": [
     {
       "firstName": "Usuario",
       "lastName": "Prueba",
@@ -10,7 +10,7 @@
       "id": 1
     }
   ],
-  "compras": [
+  "buys": [
     {
       "id": 1,
       "userId": 1,

@@ -1,39 +1,33 @@
-<button mat-icon-button (click)="toggleDarkMode()" #tooltip="matTooltip" matTooltip="Cambiar Modo" matTooltipPosition="below">
-  <mat-icon style="color: #a5a5a5;">brightness_6</mat-icon>
-</button>
 
+
+<!-- Encabezado con Logo, Usuario y Botón de Salida -->
 <div class="d-flex justify-content-between align-items-center card-head">
   <div>
-    <img class="logo"src="/assets/carousel/logo.png" alt="Logo circular"/>
+    <img class="logo" src="/assets/carousel/logo.png" alt="Logo circular"/>
   </div>
-    {{user.firstName}}  {{user.lastName}}
+  {{user.firstName}} {{user.lastName}}
   <div>
-    <button mat-icon-button  #tooltip="matTooltip" matTooltip="Salir" matTooltipPosition="below" routerLink="/accounts/login">
-      <mat-icon  style="color: #800000;">exit_to_app</mat-icon>
+    <button mat-icon-button #tooltip="matTooltip" matTooltip="Salir" matTooltipPosition="below" routerLink="/accounts/login">
+      <mat-icon style="color: #800000;">exit_to_app</mat-icon>
     </button>
   </div>
 </div>
 
+<!-- Tarjeta de Búsqueda -->
 <div class="card">
   <div class="card-body">
     <div class="search-container">
       <div class="normal-search">
-        <input
-          type="search" class="search"
-          name="" id="" placeholder="Buscar..."
-          matInput (keyup)="filter($event)" (search)="clearFilter()"
-        />
+        <input type="search" class="search" placeholder="Buscar..." matInput (keyup)="filter($event)" (search)="clearFilter()"/>
         <i class="far fa-search search-icon"></i>
       </div>
-    </div >
+    </div>
     <div class="button-container">
-      <button  class="button accept"  routerLink="/buys/buysInsert">
-        Nuevo
-      </button>
+      <button class="button accept" routerLink="/buys/buysInsert">Nuevo</button>
     </div>
   </div>
 </div>
-
+<!-- Tabla de Datos -->
 <div  class="card">
   <div class="card-title">
     <table mat-table [dataSource]="ttdataSource" >

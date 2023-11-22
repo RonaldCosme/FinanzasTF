@@ -35,6 +35,7 @@ import { LoginUserComponent } from './component/login-user/login-user.component'
 import { PaidPlanComponent } from './component/buys/paid-plan/paid-plan.component';
 import { DarkModeService } from './dark-mode.service';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+
 @NgModule({
   declarations: [
     AppComponent,
