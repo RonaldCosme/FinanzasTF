@@ -1,0 +1,33 @@
+<body>
+  <div class="container">
+    <mat-card>
+      <div class="col text-center">
+        <img class="logo" src="/assets/carousel/logo2.png" alt="Logo circular" />
+        <div class="col text-center">
+          <h2>BIENVENIDO</h2>
+        </div>
+      </div>
+
+      <mat-card-content>
+        <form>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="email@credicar.com" id="email" name="email" [(ngModel)]="email" spellcheck="false" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" id="password" placeholder="password" name="password" [(ngModel)]="password" spellcheck="false" required>
+          </mat-form-field>
+
+          <div class="d-flex justify-content-between">
+            <button mat-flat-button type="submit" (click)="login()" class="mr-2">Ingresar</button>
+            <button mat-flat-button routerLink="/accounts/register" routerLinkActive="active" type="button" class="ml-2">Registrate</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div #invalidMessage class="invalid-message" *ngIf="showInvalidMessage" [@fadeInOut]>Datos inválidos</div>
+</body>

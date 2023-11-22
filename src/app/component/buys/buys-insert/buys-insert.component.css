@@ -1,0 +1,29 @@
+.bank-logo {
+  margin-right: 50px; /* Ajusta el valor según tus preferencias para el espaciado */
+}
+.bank-logo {
+  margin-bottom: 10px; /* Ajusta el valor según tus preferencias para el espaciado vertical */
+}
+.error-message {
+  background-color: #660303;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 20px;
+  border-radius: 2px;
+  text-align: center;
+  font-weight: bold;
+  width: 300px;
+  height: 80px;
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.error-message.fade-enter-active, .error-message.fade-leave-active {
+  transition: opacity 3s;
+}
+
+.error-message.fade-enter, .error-message.fade-leave-to {
+  opacity: 0;
+}
