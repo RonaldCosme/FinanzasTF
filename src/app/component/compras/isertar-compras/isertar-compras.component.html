@@ -1,0 +1,179 @@
+<div class="card">
+    <div class="card-head">HOJA DE REGISTRO</div>
+    
+    <div class="card-body">
+      <form [formGroup]="form" (submit)="aceptar()">
+        <!-- Modelo -->
+        <div class="row my-3">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Modelo</mat-label>
+            <input matInput placeholder="Modelo" formControlName="model" required maxlength="15" matTooltip="Ingresar modelo del vehiculo" />
+          </mat-form-field>
+        </div>
+  
+        <!-- Precio y Couta Inicial -->
+        <div class="row my-2">
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Precio</mat-label>
+              <input matInput placeholder="Precio" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" formControlName="price" maxlength="7" matTooltip="Intervalo de 10000 a 9999999" />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Couta Inicial (%)</mat-label>
+              <input matInput type="number" matTooltip="Intervalo de 10% a 30%" formControlName="couta_inicial_porcentaje" required min="10" max="30" oninput="this.value = this.value.slice(0, 2)" />
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <!-- Selector de Moneda -->
+        <div class="row my-3 justify-content-center">
+          <div class="currency-selector text-center">
+            <mat-button-toggle-group formControlName="currency" #group="matButtonToggleGroup">
+              <mat-button-toggle [value]="'S/'">S/ Soles</mat-button-toggle>
+              <mat-button-toggle [value]="'$'">$ Dolares</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+        </div>
+  
+        <!-- Plazo -->
+        <div class="row my-3">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Plazo (Años)</mat-label>
+            <input matInput type="number" matTooltip="Intervalo de 1 - 6 años" formControlName="plazo" required min="1" max="6" oninput="this.value = this.value.slice(0, 1)" />
+          </mat-form-field>
+        </div>
+  
+        <!-- Tasa de Interés y Tipo -->
+        <div class="row my-2">
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Tipo de Tasa de Interes</mat-label>
+              <mat-select formControlName="type_interest_rate" required>
+                <mat-option value="TNA">TNA</mat-option>
+                <mat-option value="TEA">TEA</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Tasa de Interés Anual(%)</mat-label>
+              <input matInput placeholder="Tasa de Interés Anual(%)" formControlName="interest_rate" maxlength="5" pattern="^\d+(\.\d{1,2})?$" matTooltip="Intervalo de 5 % - 20 %" />
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <!-- Periodo de Gracia -->
+        <div class="row my-3">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Tipo de Periodo de Gracia</mat-label>
+            <mat-select formControlName="type_grace_period" required>
+              <mat-option value="TOTAL">TOTAL</mat-option>
+              <mat-option value="PARCIAL">PARCIAL</mat-option>
+              <mat-option value="NO">NO</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+  
+        <div class="row my-3">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Periodo de Gracia (Meses)</mat-label>
+            <input matInput type="number" matTooltip="Intervalo de 1 - 6 meses" formControlName="grace_period" required min="1" max="6" oninput="this.value = this.value.slice(0, 1)" [disabled]="form.get('type_grace_period')?.value === 'NO'" [hidden]="form.get('type_grace_period')?.value === 'NO'" [style.display]="form.get('type_grace_period')?.value === 'NO' ? 'none' : 'block'" />
+          </mat-form-field>
+        </div>
+  
+        <!-- Desgravamen -->
+        <div class="row my-3">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Desgravamen</mat-label>
+            <mat-select formControlName="Desgravamen" required>
+              <mat-option value="BancoA">
+                <img src="/assets/bancoA_logo.png" alt="Banco A Logo" class="bank-logo">
+                BBVA (0.05511%)
+              </mat-option>
+              <mat-option value="BancoB">
+                <img src="/assets/bancoB_logo.png" alt="Banco B Logo" class="bank-logo">
+                BCP (0.077%)
+              </mat-option>
+              <mat-option value="BancoC">
+                <img src="/assets/bancoC_logo.png" alt="Banco C Logo" class="bank-logo">
+                SCOTIABANK (0.1045%)
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+  
+        <!-- Botones de Acción -->
+        <div class="row my-3" style="text-align: center;">
+          <button class="button accept" (click)="aceptar()">Guardar</button>
+          <button class="button cancel" routerLink="/compras">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Carousel -->
+<div class="card separate">
+    <div id="carouselSlideGymPartner" class="carousel slide" data-bs-ride="carousel">
+  
+      <!-- Indicadores del Carousel -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselSlideGymPartner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselSlideGymPartner" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselSlideGymPartner" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+  
+      <!-- Contenido del Carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../../../../assets/carousel/carro1.png" class="d-block w-100" alt="img1" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="tshadow">Cotiza tu vehiculo de manera sencilla</h5>
+            <p class="tshadow">
+              Con Credicar podrás solicitar fácilmente tu credito vehicular y
+              ver a detalle tus cotizaciones
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../../../../assets/carousel/carro2.png" class="d-block w-100" alt="img2" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="tshadow">
+              Pedir un Credito Vehicular nunca fue tan fácil
+            </h5>
+            <p class="tshadow">
+              Observa de forma detallada
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../../../../assets/carousel/carro3.png" class="d-block w-100" alt="img3" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="tshadow">
+              Solicitar tu Credito Vehicular es más sencillo de lo que imaginas
+            </h5>
+            <p class="tshadow">
+              Podrás vizualizar todo de forma rapida y sencilla
+              en tiempo real, organiza tus FINANZAS
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Controles del Carousel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlideGymPartner" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselSlideGymPartner" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+  
+  
+    <!-- Mensaje de Error -->
+    <div class="error-message" *ngIf="showInvalidMessage" [@fadeInOut]>{{ 'Datos no válidos. Por favor, complete los campos correctamente.' }}</div>
+  </div>
+  

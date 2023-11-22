@@ -1,0 +1,91 @@
+<body>
+    <div class="vh-100 d-flex align-items-center register-bg">
+      <div class="form-container">
+        <mat-card class="card">
+          <mat-card-title>
+            <img class="logo" src="/assets/carousel/logo3.png" alt="Logo circular" />
+            <div class="row">
+              <div class="col text-center">
+                <h2>REGISTRATE</h2>
+              </div>
+            </div>
+          </mat-card-title>
+            <mat-card-content>
+            <form class="register-form" (submit)="onSubmit()" #userForm="ngForm">
+              <div class="row my-2">
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label class="box-text">Nombre</mat-label>
+                    <input matInput placeholder="Nombre" onkeypress="return event.charCode > 48 && event.charCode > 57"
+                      name="firstName" required [(ngModel)]="userData.firstName" maxlength="15">
+                    <mat-icon matSuffix>person</mat-icon>
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label class="box-text">Apellido</mat-label>
+                    <input matInput placeholder="Apellido" onkeypress="return event.charCode > 48 && event.charCode > 57"
+                      name="lastName" required [(ngModel)]="userData.lastName" maxlength="15">
+                    <mat-icon matSuffix>person</mat-icon>
+                  </mat-form-field>
+                </div>
+              </div>
+                <div class="row my-2">
+                <mat-form-field appearance="outline">
+                  <mat-label class="box-text">email@credicar.com</mat-label>
+                  <input matInput placeholder="Email" name="email" required [(ngModel)]="userData.email" maxlength="20"
+                    pattern="[^@]+@credicar\.com$">
+                  <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+              </div>
+                <div class="row my-2">
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label class="box-text">Usuario</mat-label>
+                    <input matInput placeholder="Usuario" name="userName" required [(ngModel)]="userData.userName"
+                      maxlength="10">
+                    <mat-icon matSuffix>person</mat-icon>
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Telefono</mat-label>
+                    <input matInput placeholder="Telefono" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                      formControlName="phone" required [(ngModel)]="userData.phone" maxlength="9">
+                    <mat-icon matSuffix>smartphone</mat-icon>
+                  </mat-form-field>
+                </div>
+              </div>
+                <div class="row my-2">
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label class="box-text">Contraseña</mat-label>
+                    <input matInput placeholder="Contraseña" name="password" required [(ngModel)]="password[0]"
+                      type="password">
+                    <mat-icon matSuffix>lock</mat-icon>
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label class="box-text">Confirmar Contraseña</mat-label>
+                    <input matInput placeholder="Confirmar Contraseña" name="confirmPassword" required
+                      [(ngModel)]="password[1]" type="password">
+                    <mat-icon matSuffix>lock</mat-icon>
+                  </mat-form-field>
+                </div>
+              </div>
+                <div class="d-flex justify-content-between">
+                <button mat-flat-button type="submit" class="save-button">
+                  Aceptar
+                </button>
+                <button mat-flat-button routerLink="/cuenta/login" routerLinkActive="active" type="button">
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </body>
+  
