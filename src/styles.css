@@ -221,14 +221,18 @@ body.light-mode {
 
 
 
-/* You can add global styles to this file, and also import other style files */
+/* Estilos Globales */
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0; 
+  font-family: Arial, sans-serif; /* Cambiado a Arial */
+  background: #E8EFF1; /* Nuevo color de fondo */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* Importar fuentes de Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-
-
 
 /* Resetear estilos por defecto */
 * {
@@ -237,33 +241,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   box-sizing: border-box;
 }
 
-/* Estilos para el body */
-body {
-  position: relative;
-  font-family: 'Roboto', sans-serif;
-  background: #F4F7FA;
-}
-
 /* Estilos para la tarjeta (.card) */
 .card {
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-  background-color: #fff;
-  margin: 1.25rem 0 1.25rem 0;
-  box-shadow: 0 0.25rem 0.5rem #e6edef;
+  background-color: #FFFFFF; /* Fondo blanco */
+  margin: 1.25rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
   color: #495057;
-
 }
-
 
 /* Estilos para la cabecera de la tarjeta (.card-head) */
 .card-head {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #edf1f7;
-  font-size: 1rem;
-  font-weight: 600;
-
+  font-size: 1.2rem; /* Tamaño de fuente aumentado */
+  font-weight: bold; /* Fuente en negrita */
 }
 
 /* Estilos para el cuerpo de la tarjeta (.card-body) */
@@ -272,21 +266,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 /* Estilos para el contenedor de botones (.button-container) */
 .button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around; /* Espaciado uniforme */
   margin-top: 0;
-
 }
 
 /* Estilos para los botones (.button) */
 .button {
   padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem; /* Bordes más redondeados */
   border: none;
   cursor: pointer;
   font-size: 0.9rem;
@@ -294,17 +286,16 @@ body {
   color: #fff;
   transition: background-color 0.07s ease-in-out, color 0.05s ease-in-out;
   box-shadow: 0 0.25rem 0.5rem #e6edef;
-
 }
 
 /* Estilos para el botón de aceptar (.accept) */
 .button.accept {
-  background-color: #212121;
+  background-color: #4CAF50; /* Verde */
 }
 
 /* Estilos para el botón de cancelar (.cancel) */
 .button.cancel {
-  background-color: #b71c1c;
+  background-color: #F44336; /* Rojo */
   margin-left: 10px;
 }
 
@@ -325,11 +316,11 @@ body {
 
 /* Estilos para la barra de búsqueda normal (.normal-search) */
 .normal-search .search {
-  border: none;
+  border: 1px solid #CCCCCC; /* Borde gris */
   height: 2.375rem;
   padding-left: 2.5rem;
   padding-right: 1.25rem;
-  background-color: #f3f3f9;
+  background-color: #FFFFFF; /* Fondo blanco */
   box-shadow: none;
   border-radius: 1.875rem;
   outline: 0;
@@ -358,8 +349,6 @@ body {
 
 /* Estilos para el botón del menú de búsqueda al pasar el mouse o enfocar (.search-menu-btn:hover, .search-menu-btn:focus) */
 .search-menu-btn:hover, .search-menu-btn:focus {
-  .search-icon {
-    color: #699dfa;
-  }
+  color: #699dfa;
 }
 
