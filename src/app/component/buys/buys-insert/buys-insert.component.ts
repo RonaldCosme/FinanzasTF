@@ -6,6 +6,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import { user } from 'src/app/model/user';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
+
 @Component({
   selector: 'app-buys-insert',
   templateUrl: './buys-insert.component.html',

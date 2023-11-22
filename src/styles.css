@@ -316,11 +316,11 @@ body {
 
 /* Estilos para la barra de búsqueda normal (.normal-search) */
 .normal-search .search {
-  border: 1px solid #CCCCCC; /* Borde gris */
+  border: 1px solid #ca1212; /* Borde gris */
   height: 2.375rem;
   padding-left: 2.5rem;
   padding-right: 1.25rem;
-  background-color: #FFFFFF; /* Fondo blanco */
+  background-color: #31ac83; /* Fondo blanco */
   box-shadow: none;
   border-radius: 1.875rem;
   outline: 0;
