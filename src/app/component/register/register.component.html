@@ -1,0 +1,112 @@
+<body>
+  <!-- Contenedor principal con diseño flex y fondo para el formulario de registro -->
+  <div class="vh-100 d-flex align-items-center register-bg" style="justify-content: center; align-items: center;">
+    <!-- Contenedor del formulario -->
+    <div class="form-container">
+      <!-- Tarjeta que contiene el título y el contenido del formulario -->
+      <mat-card class="card">
+        <!-- Título de la tarjeta con logo e indicación de registro -->
+        <mat-card-title>
+          <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo UPC" />
+          <div class="row">
+            <div class="col text-center">
+              <h2>REGISTRATE</h2>
+            </div>
+          </div>
+        </mat-card-title>
+
+        <!-- Contenido del formulario -->
+        <mat-card-content>
+          <!-- Formulario de registro con campos para nombre, apellido, email, usuario, teléfono y contraseña -->
+          <form class="register-form" (submit)="onSubmit()" #userForm="ngForm">
+            <!-- Sección para el nombre y apellido del usuario -->
+            <div class="row my-2">
+              <!-- Campo para el nombre -->
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label class="box-text">Nombre</mat-label>
+                  <input matInput placeholder="Nombre" onkeypress="return event.charCode > 48 && event.charCode > 57"
+                    name="firstName" required [(ngModel)]="userData.firstName" maxlength="15">
+                  <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+              </div>
+              <!-- Campo para el apellido -->
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label class="box-text">Apellido</mat-label>
+                  <input matInput placeholder="Apellido" onkeypress="return event.charCode > 48 && event.charCode > 57"
+                    name="lastName" required [(ngModel)]="userData.lastName" maxlength="15">
+                  <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!-- Sección para la dirección de correo electrónico -->
+            <div class="row my-2">
+              <mat-form-field appearance="outline">
+                <mat-label class="box-text">Correo</mat-label>
+                <input matInput placeholder="ejemplo@finanzas.tf" name="email" required [(ngModel)]="userData.email" maxlength="20"
+                  pattern="[^@]+@finanzas\.tf$">
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+            </div>
+
+            <!-- Sección para el nombre de usuario y número de teléfono -->
+            <div class="row my-2">
+              <!-- Campo para el nombre de usuario -->
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label class="box-text">Usuario</mat-label>
+                  <input matInput placeholder="Usuario" name="userName" required [(ngModel)]="userData.userName"
+                    maxlength="10">
+                  <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+              </div>
+              <!-- Campo para el número de teléfono -->
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label>Telefono</mat-label>
+                  <input matInput placeholder="Telefono" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                    formControlName="phone" required [(ngModel)]="userData.phone" maxlength="9">
+                  <mat-icon matSuffix>smartphone</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!-- Sección para la contraseña y confirmación de contraseña -->
+            <div class="row my-2">
+              <!-- Campo para la contraseña -->
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label class="box-text">Contraseña</mat-label>
+                  <input matInput placeholder="Contraseña" name="password" required [(ngModel)]="password[0]"
+                    type="password">
+                  <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+              </div>
+              <!-- Campo para la confirmación de contraseña -->
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label class="box-text">Confirmar Contraseña</mat-label>
+                  <input matInput placeholder="Confirmar Contraseña" name="confirmPassword" required
+                    [(ngModel)]="password[1]" type="password">
+                  <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!-- Botones de Aceptar y Cancelar -->
+            <div class="d-flex justify-content-between">
+              <button mat-flat-button type="submit" class="save-button">
+                Aceptar
+              </button>
+              <button mat-flat-button routerLink="/accounts/login" routerLinkActive="active" type="button">
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</body>

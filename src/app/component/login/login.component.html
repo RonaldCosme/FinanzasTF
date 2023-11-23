@@ -1,0 +1,38 @@
+<body>
+  <div class="container">
+    <!-- Tarjeta de Bienvenida -->
+    <mat-card>
+      <!-- Logo y Título de Bienvenida -->
+      <div class="col text-center">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo UPC" />
+        <h2>Iniciar Sesión</h2>
+      </div>
+
+      <!-- Contenido de la Tarjeta: Formulario de Inicio de Sesión -->
+      <mat-card-content>
+        <form>
+          <!-- Campo de Email -->
+          <mat-form-field appearance="outline">
+            <mat-label>Correo</mat-label>
+            <input matInput type="email" placeholder="ejemplo@finanzas.tf" id="email" name="email" [(ngModel)]="email" spellcheck="false" required>
+          </mat-form-field>
+
+          <!-- Campo de Contraseña -->
+          <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" id="password" placeholder="Contraseña" name="password" [(ngModel)]="password" spellcheck="false" required>
+          </mat-form-field>
+
+          <!-- Botones de Acción -->
+          <div class="d-flex justify-content-between">
+            <button mat-flat-button type="submit" (click)="login()" class="mr-2">Ingresar</button>
+            <button mat-flat-button routerLink="/accounts/register" routerLinkActive="active" type="button" class="ml-2">Registrarse</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Mensaje de Error -->
+  <div #invalidMessage class="invalid-message" *ngIf="showInvalidMessage" [@fadeInOut]>El correo o la contraseña que proporcionó no son válidos</div>
+</body>

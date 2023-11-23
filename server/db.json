@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "firstName": "Usuario",
+      "lastName": "Prueba",
+      "email": "prueba@finanzas.tf",
+      "userName": "UsuarioPrueba",
+      "phone": "123456789",
+      "password": "contraseñaSegura",
+      "id": 1
+    },
+    {
+      "firstName": "Ronald",
+      "lastName": "Cosme",
+      "email": "ronald@finanzas.tf",
+      "userName": "pepe",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "firstName": "Diego",
+      "lastName": "Barja",
+      "email": "diego@finanzas.tf",
+      "userName": "Diegob79",
+      "password": "Testing123",
+      "id": 3
+    }
+  ],
+  "purchases": [
+    {
+      "id": 1,
+      "userId": 1,
+      "model": "AutoGenérico",
+      "price": "20000",
+      "currency": "$",
+      "cuota_inicial_porcentaje": 10,
+      "initial_fee": 2000,
+      "credit": 18000,
+      "plazo": 2,
+      "type_interest_rate": "TEA",
+      "interest_rate": "5",
+      "type_grace_period": "TOTAL",
+      "grace_period": 1,
+      "VAN": 0,
+      "TIR": 0,
+      "Desgravamen": "BancoA"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "model": "AutoEconómico",
+      "price": "15000",
+      "currency": "€",
+      "cuota_inicial_porcentaje": 15,
+      "initial_fee": 2250,
+      "credit": 12750,
+      "plazo": 2,
+      "type_interest_rate": "TNA",
+      "interest_rate": "4",
+      "type_grace_period": "PARCIAL",
+      "grace_period": 1,
+      "VAN": 0,
+      "TIR": 0,
+      "Desgravamen": "BancoC"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "model": "Ford Ecosport",
+      "price": "10000",
+      "currency": "$",
+      "cuota_inicial_porcentaje": 10,
+      "initial_fee": 1000,
+      "credit": 9000,
+      "plazo": 5,
+      "type_interest_rate": "TEA",
+      "interest_rate": "10",
+      "type_grace_period": "PARCIAL",
+      "grace_period": 1,
+      "VAN": 0,
+      "TIR": 0,
+      "Desgravamen": "BancoB"
+    }
+  ]
+}

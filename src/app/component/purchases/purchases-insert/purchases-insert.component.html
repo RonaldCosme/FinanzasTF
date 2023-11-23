@@ -1,0 +1,114 @@
+<div class="card">
+  <div class="card-head">HOJA DE REGISTRO</div>
+  <div class="card-body">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <!-- Modelo -->
+      <div class="row my-3">
+        <mat-form-field appearance="outline" style="margin-right: 20rem; width: 100%">
+          <mat-label>Modelo</mat-label>
+          <input matInput placeholder="Modelo" formControlName="model" required maxlength="15" matTooltip="Ingresar modelo del vehiculo"/>
+        </mat-form-field>
+      </div>
+
+      <!-- Precio y Cuota Inicial -->
+      <div class="row my-2">
+        <!-- Precio -->
+        <div class="col">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Precio</mat-label>
+            <input matInput placeholder="Precio" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" formControlName="price" maxlength="7" matTooltip="Intervalo de 10000 a 9999999"/>
+          </mat-form-field>
+        </div>
+        <!-- Cuota Inicial -->
+        <div class="col">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Cuota Inicial (%)</mat-label>
+            <input matInput type="number" matTooltip="Intervalo de 10% a 30%" formControlName="cuota_inicial_porcentaje" required min="10" max="30" oninput="this.value = this.value.slice(0, 2)"/>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Selector de Moneda -->
+      <div class="row my-3 justify-content-center">
+        <div class="currency-selector text-center">
+          <mat-button-toggle-group formControlName="currency" #group="matButtonToggleGroup">
+            <mat-button-toggle [value]="'S/'">S/ Soles</mat-button-toggle>
+            <mat-button-toggle [value]="'$'">$ Dolares</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+
+      <!-- Plazo -->
+      <div class="row my-3">
+        <mat-form-field appearance="outline" style="margin-right: 20rem; width: 100%">
+          <mat-label>Plazo (Años)</mat-label>
+          <input matInput type="number" matTooltip="Intervalo de 1 - 6 años" formControlName="plazo" required min="1" max="6" oninput="this.value = this.value.slice(0, 1)"/>
+        </mat-form-field>
+      </div>
+
+      <!-- Tasa de Interés y Tipo -->
+      <div class="row my-2">
+        <!-- Tipo de Tasa de Interés -->
+        <div class="col">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Tipo de Tasa de Interés</mat-label>
+            <mat-select formControlName="type_interest_rate" required>
+              <mat-option value="TNA">TNA</mat-option>
+              <mat-option value="TEA">TEA</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <!-- Tasa de Interés Anual -->
+        <div class="col">
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Tasa de Interés Anual(%)</mat-label>
+            <input matInput placeholder="Tasa de Interés Anual(%)" formControlName="interest_rate" maxlength="5" pattern="^\d+(\.\d{1,2})?$" matTooltip="Intervalo de 5 % - 20 %"/>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Periodo de Gracia -->
+      <div class="row my-3">
+        <mat-form-field appearance="outline" style="margin-right: 20rem; width: 100%">
+          <mat-label>Tipo de Periodo de Gracia</mat-label>
+          <mat-select formControlName="type_grace_period" required>
+            <mat-option value="TOTAL">TOTAL</mat-option>
+            <mat-option value="PARCIAL">PARCIAL</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="row my-3">
+        <mat-form-field appearance="outline" style="margin-right: 20rem; width: 100%">
+          <mat-label>Periodo de Gracia (Meses)</mat-label>
+          <input matInput type="number" matTooltip="Intervalo de 1 - 6 meses" formControlName="grace_period" required min="1" max="6" oninput="this.value = this.value.slice(0, 1)" [disabled]="form.get('type_grace_period')?.value === 'NO'" [hidden]="form.get('type_grace_period')?.value === 'NO'" [style.display]="form.get('type_grace_period')?.value === 'NO' ? 'none' : 'block'"/>
+        </mat-form-field>
+      </div>
+
+      <!-- Desgravamen -->
+      <div class="row my-3">
+        <mat-form-field appearance="outline" style="margin-right: 20rem; width: 100%">
+          <mat-label>Desgravamen</mat-label>
+          <mat-select formControlName="Desgravamen" required>
+            <!-- Opciones para Bancos -->
+            <mat-option value="BancoA">
+               BBVA (0.05511%)
+            </mat-option>
+            <mat-option value="BancoB">
+               BCP (0.077%)
+            </mat-option>
+            <mat-option value="BancoC">
+               SCOTIABANK (0.1045%)
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Botones Guardar y Cancelar -->
+      <div style="text-align: center;">
+        <button class="button accept" (click)="aceptar()">Guardar</button>
+        <button class="button cancel" routerLink="/purchases">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+/* Estilos para logos de bancos */
+.bank-logo {
+  margin-right: 50px; /* Espaciado horizontal */
+  margin-bottom: 10px; /* Espaciado vertical */
+  display: inline-block; /* Hacer que el logo se comporte como un bloque en línea */
+  max-width: 100px; /* Tamaño máximo del logo */
+  height: auto; /* Altura automática para mantener la proporción */
+}
+
+/* Estilos para mensajes de error */
+.error-message {
+  background-color: #D32F2F; /* Rojo más vivo */
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 15px;
+  border-radius: 8px; /* Bordes redondeados para un aspecto moderno */
+  text-align: center;
+  font-weight: bold;
+  width: 100%; /* Ancho completo para mejor visibilidad */
+  max-width: 400px; /* Ancho máximo */
+  position: fixed; /* Fijo en la pantalla */
+  top: 20px; /* Espaciado desde la parte superior */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+  z-index: 1000; /* Asegurarse de que esté sobre otros elementos */
+}
+
+.error-message.fade-enter-active, .error-message.fade-leave-active {
+  transition: opacity 3s ease-in-out; /* Transición suave */
+}
+
+.error-message.fade-enter, .error-message.fade-leave-to {
+  opacity: 0;
+}
+

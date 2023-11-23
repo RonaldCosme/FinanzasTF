@@ -1,0 +1,79 @@
+/* Estilos para dispositivos de ancho mayor a 1200px */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 650px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  }
+}
+
+mat-card-title {
+  text-align: center;
+  font-size: 28px; /* Tamaño de fuente reducido para mejor ajuste */
+  margin-top: 2rem; /* Espaciado superior ajustado */
+}
+
+.register-bg {
+  background-image: url('/src/assets/carousel/logo.png'); /* Manteniendo la imagen de fondo */
+  background-size: contain; /* Ajuste de tamaño de fondo */
+  background-position: center;
+}
+
+.logo {
+  width: 100px; /* Tamaño reducido */
+  height: 100px; /* Tamaño reducido */
+  border-radius: 50%;
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column; /* Alinear elementos verticalmente */
+  align-items: center; /* Centrar elementos horizontalmente */
+  margin-top: 1rem; /* Espaciado superior */
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+}
+
+/* Estilos para botones */
+button[type="submit"], button[type="button"] {
+  width: 100%;
+  max-width: 450px; /* Ancho máximo */
+  padding: 12px 20px; /* Relleno */
+  border-radius: 8px; /* Bordes redondeados */
+  border: none; /* Sin bordes */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cursor tipo puntero */
+  margin-bottom: 10px; /* Espaciado entre botones */
+}
+
+button[type="submit"] {
+  background-color: #4CAF50; /* Verde */
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background-color: #388E3C; /* Tono más oscuro al pasar el ratón */
+}
+
+button[type="button"] {
+  background-color: #FFC107; /* Amarillo */
+  color: #000000;
+}
+
+button[type="button"]:hover {
+  background-color: #FFB300; /* Tono más oscuro al pasar el ratón */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #6DD5FA, #FF758C); /* Fondo degradado */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Arial', sans-serif; /* Cambio de fuente */
+}

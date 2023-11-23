@@ -1,0 +1,42 @@
+<div *ngIf="purchases">
+  <!-- Tarjeta de Encabezado con Botones y Título -->
+  <div class="card">
+    <div class="card-body" style="display: flex; justify-content: space-between; align-items: center;">
+      <button mat-icon-button class="button acciones" #tooltip="matTooltip" matTooltip="Exportar Plan" matTooltipPosition="below" (click)="exportToExcel()">
+        <mat-icon>description</mat-icon>
+      </button>
+      <p class="card-head" style="margin: 0;">PLAN DE PAGOS - {{ purchases.model }}</p>
+      <button class="button accept" routerLink="/purchases">Regresar</button>
+    </div>
+  </div>
+
+  <!-- Contenedor de Tabla de Datos -->
+  <div class="table-container">
+    <!-- Encabezados de la Tabla -->
+    <table mat-table [dataSource]="dataTable">
+      <ng-container matColumnDef="{{ column }}" *ngFor="let column of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">{{ column === 'month' ? 'Mes' : column }}</th>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    </table>
+
+    <!-- Cuerpo de la Tabla con Desplazamiento Vertical -->
+    <div class="table-scroll">
+      <table mat-table [dataSource]="dataTable">
+        <ng-container matColumnDef="{{ column }}" *ngFor="let column of displayedColumns">
+          <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element[column] }}</td>
+        </ng-container>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tarjeta de Información Financiera -->
+  <div class="card">
+    <div class="card-body" style="display: flex; justify-content: space-between; align-items: center;">
+      <p class="card-body" style="margin: 0;">VAN = {{ purchases.VAN }}</p>
+      <p class="card-body" style="margin: 0;">TIR = {{ purchases.TIR | number: '1.2-5'}} %</p>
+    </div>
+  </div>
+</div>
+

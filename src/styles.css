@@ -1,0 +1,354 @@
+  /* Estilos globales y Modo Oscuro */
+body {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark-mode {
+  background-color: #1a1a1a; /* Fondo oscuro grisáceo */
+  color: #ffffff; /* Texto principal en modo oscuro */
+}
+
+/* Estilos comunes para tarjetas y elementos relacionados */
+
+/* Tarjeta */
+body.dark-mode .card-body,
+body.dark-mode .card {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #7c7c7c; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Botón con icono */
+body.dark-mode button.mat-icon-button[mattooltip] {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #2d2d2d; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Filas de la tabla */
+body.dark-mode .mat-row,
+body.dark-mode .mat-header-row {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #2d2d2d; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Barra de búsqueda */
+body.dark-mode .search,
+body.dark-mode .search-icon {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #2d2d2d; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Campo de formulario */
+body.dark-mode mat-form-field {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #7c7c7c; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Etiqueta de formulario */
+body.dark-mode mat-label {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #7c7c7c; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Opción de menú desplegable */
+body.dark-mode mat-option {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #ffffff; /* Fondo gris oscuro */
+  color: #000000; /* Texto blanco en modo oscuro */
+}
+
+/* Inversión de colores para el logo */
+body.dark-mode .mat-cell button.mat-icon-button {
+  background-color: #2d2d2d; /* Fondo gris oscuro */
+}
+
+body.dark-mode .card-head {
+  background-color: #1a1a1a; /* Fondo gris oscuro */
+}
+
+/* Estilos específicos para botones */
+body.dark-mode .button,
+body.dark-mode .button.cancel {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body.dark-mode .button {
+  background-color: #ffffff; /* Blanco para el fondo del botón en modo oscuro */
+  color: #000000; /* Negro para el texto del botón en modo oscuro */
+}
+
+body.dark-mode .button.cancel {
+  background-color: #5c0202; /* Rojo oscuro */
+
+  color: #ffffff;
+}
+
+/* Estilos para los textos dentro de los carousels y campos de entrada en modo oscuro */
+body.dark-mode .carousel-caption,
+body.dark-mode input.mat-input,
+body.dark-mode input.mat-input::placeholder {
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+
+/* Estilos específicos para campos de entrada en modo oscuro */
+body.dark-mode input.mat-input {
+  background-color: #1a1a1a; /* Fondo gris oscuro para campos de entrada */
+  border: 1px solid #ffffff; /* Borde blanco oscuro */
+}
+
+
+/* Estilos para el carrusel en modo oscuro */
+body.dark-mode .carousel-inner,
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+  background-color: #ffffff; /* Fondo gris oscuro */
+}
+
+body.dark-mode .carousel-control-prev,
+body.dark-mode .carousel-control-next {
+  color: #ffffff; /* Iconos de navegación en modo oscuro */
+}
+
+/* Estilos para la tabla y paginación en modo oscuro */
+body.dark-mode .card-title table,
+body.dark-mode .card-title th,
+body.dark-mode .card-title td,
+body.dark-mode mat-paginator {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #2d2d2d; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Estilos para el mensaje de error en modo oscuro */
+body.dark-mode .error-message {
+  color: #680808; /* Rojo oscuro para mensajes de error */
+}
+
+/* Estilos para las tablas */
+body.dark-mode .table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+body.dark-mode .table-container th,
+body.dark-mode .table-container td {
+  text-align: center;
+}
+
+body.dark-mode .table-container th {
+  background-color: #2d2d2d; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+body.dark-mode .table-container td {
+  background-color: #1a1a1a; /* Fondo gris oscuro para celdas de tabla */
+
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Estilos para la VAN y TIR */
+body.dark-mode .card:last-child .card-body {
+  justify-content: space-between;
+
+}
+
+/* Estilos para el grupo de botones mat-button-toggle en modo oscuro */
+body.dark-mode mat-button-toggle-group {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: #1a1a1a; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Estilos para los botones mat-button-toggle en modo oscuro */
+body.dark-mode mat-button-toggle {
+  background-color: #2d2d2d; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+/* Estilos para los botones mat-button-toggle activos en modo oscuro */
+body.dark-mode mat-button-toggle.mat-button-toggle-checked {
+  background-color: #57575c; /* Azul oscuro para botones activos */
+  color: #ffffff; /* Texto blanco en botones activos */
+}
+
+/* Elimina la sombra del div con clase card */
+body.dark-mode .card {
+  box-shadow: none;
+}
+
+/* Elimina la sombra de los botones */
+body.dark-mode .button,
+body.dark-mode .button.cancel,
+body.dark-mode mat-button-toggle,
+body.dark-mode mat-button-toggle.mat-button-toggle-checked {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Estilos generales para la aplicación en modo claro */
+body.light-mode {
+  background-color: #ffffff; /* Fondo blanco en modo claro */
+  color: #000000; /* Texto negro en modo claro */
+}
+
+/* Agrega otros estilos específicos para el modo claro según sea necesario */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos Globales */
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0; 
+  font-family: Arial, sans-serif; /* Cambiado a Arial */
+  background: #698d97; /* Nuevo color de fondo */
+}
+
+/* Importar fuentes de Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+/* Resetear estilos por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para la tarjeta (.card) */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 100%); /* Fondo blanco */
+  margin: 1.25rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  color: #495057;            
+}
+
+/* Estilos para la cabecera de la tarjeta (.card-head) */
+.card-head {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #edf1f7;
+  font-size: 1.2rem; /* Tamaño de fuente aumentado */
+  font-weight: bold; /* Fuente en negrita */
+}
+
+/* Estilos para el cuerpo de la tarjeta (.card-body) */
+.card-body {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos para el contenedor de botones (.button-container) */
+.button-container {
+  display: flex;
+  justify-content: space-around; /* Espaciado uniforme */
+  margin-top: 0;
+}
+
+/* Estilos para los botones (.button) */
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem; /* Bordes más redondeados */
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  transition: background-color 0.07s ease-in-out, color 0.05s ease-in-out;
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
+}
+
+/* Estilos para el botón de aceptar (.accept) */
+.button.accept {
+  background-color: #4CAF50; /* Verde */
+}
+
+/* Estilos para el botón de cancelar (.cancel) */
+.button.cancel {
+  background-color: #F44336; /* Rojo */
+  margin-left: 10px;
+}
+
+/* Estilos para el separador (.separate) */
+.separate {
+  margin-left: 2rem;
+}
+
+/* Estilos para el texto con sombra (.tshadow) */
+.tshadow {
+  text-shadow: 0px 4px 7px black;
+}
+
+/* Estilos para el contenedor de búsqueda (.search-container) */
+.search-container {
+  position: relative;
+}
+
+/* Estilos para la barra de búsqueda normal (.normal-search) */
+.normal-search .search {
+  border: 1px solid #ca1212; /* Borde gris */
+  height: 2.375rem;
+  padding-left: 2.5rem;
+  padding-right: 1.25rem;
+  background-color: #31ac83; /* Fondo blanco */
+  box-shadow: none;
+  border-radius: 1.875rem;
+  outline: 0;
+}
+
+/* Estilos para el ícono de búsqueda (.search-icon) */
+.normal-search .search-icon {
+  position: absolute;
+  font-size: 1rem;
+  line-height: 2.375rem;
+  left: 0.813rem;
+  top: 0;
+  color: #000000;
+}
+
+/* Estilos para el botón del menú de búsqueda (.search-menu-btn) */
+.search-menu-btn {
+  font-size: 18px;
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  outline: 0;
+}
+
+/* Estilos para el botón del menú de búsqueda al pasar el mouse o enfocar (.search-menu-btn:hover, .search-menu-btn:focus) */
+.search-menu-btn:hover, .search-menu-btn:focus {
+  color: #699dfa;
+}
+

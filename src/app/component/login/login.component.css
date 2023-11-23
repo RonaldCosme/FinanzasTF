@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: aquamarine; /* Nueva imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Arial', sans-serif; /* Cambio de fuente */
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  display: flex;
+  background-color: rgba(201, 19, 140, 0.7); /* Fondo semi-transparente para contraste */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+.text-center {
+  text-align: center;
+  margin-top: 2rem;
+  color: #333333; /* Cambio de color de texto */
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+mat-form-field {
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 20px; /* Espaciado entre campos */
+}
+
+button[type="submit"], button[type="button"] {
+  width: 40%;
+  max-width: 450px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50; /* Verde para el botón de enviar */
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background-color: #388E3C; /* Tono más oscuro al pasar el ratón */
+}
+
+button[type="button"] {
+  background-color: #FFC107; /* Amarillo para el botón de registro */
+  color: #000000;
+}
+
+button[type="button"]:hover {
+  background-color: #FFB300; /* Tono más oscuro al pasar el ratón */
+}
+
+.logo {
+  height: auto;
+  height: 130px;
+}
+
+.invalid-message {
+  background-color: #F44336; /* Rojo para mensajes de error */
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  width: 300px;
+  height: 80px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para los mensajes de error */
+}
+
+.invalid-message.fade-enter-active, .invalid-message.fade-leave-active {
+  transition: opacity 3s;
+}
+
+.invalid-message.fade-enter, .invalid-message.fade-leave-to {
+  opacity: 0;
+}

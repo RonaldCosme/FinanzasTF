@@ -1,0 +1,123 @@
+
+
+<!-- Encabezado con Logo, Usuario y Botón de Salida -->
+<div class="d-flex justify-content-between align-items-center card-head">
+  <div>
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo circular"/>
+  </div>
+  {{user.firstName}} {{user.lastName}}
+  <div>
+    <button mat-icon-button #tooltip="matTooltip" matTooltip="Salir" matTooltipPosition="below" routerLink="/accounts/login">
+      <mat-icon style="color: #800000;">exit_to_app</mat-icon>
+    </button>
+  </div>
+</div>
+
+<!-- Tarjeta de Búsqueda -->
+<div class="card">
+  <div class="card-body">
+    <div class="search-container">
+      <div class="normal-search">
+        <input type="search" class="search" placeholder="Buscar..." matInput (keyup)="filter($event)" (search)="clearFilter()"/>
+        <i class="far fa-search search-icon"></i>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="button accept" routerLink="/purchases/purchasesInsert">Nuevo</button>
+    </div>
+  </div>
+</div>
+<!-- Tabla de Datos -->
+<div  class="card">
+  <div class="card-title">
+    <table mat-table [dataSource]="ttdataSource" >
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef>MODELO</th>
+        <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="currency">
+        <th mat-header-cell *matHeaderCellDef>MONEDA</th>
+        <td mat-cell *matCellDef="let element"> {{element.currency}} </td>
+      </ng-container>
+
+       <ng-container matColumnDef="plazo">
+        <th mat-header-cell *matHeaderCellDef>PLAZO</th>
+        <td mat-cell *matCellDef="let element"> {{element.plazo}} Años </td>
+      </ng-container>
+
+      <ng-container matColumnDef="type_interest_rate">
+        <th mat-header-cell *matHeaderCellDef>TIPO DE TASA DE INTERES</th>
+        <td mat-cell *matCellDef="let element" > {{element.type_interest_rate}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="interest_rate">
+        <th mat-header-cell *matHeaderCellDef>TASA DE INTERES ANUAL(%)</th>
+        <td mat-cell *matCellDef="let element" > {{element.interest_rate}} %</td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipo_periodo_tasa">
+        <th mat-header-cell *matHeaderCellDef>PERIODO DE TASA</th>
+        <td mat-cell *matCellDef="let element" > {{element.tipo_periodo_tasa}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="type_grace_period">
+        <th mat-header-cell *matHeaderCellDef>TIPO DE PERIODO DE GRACIA</th>
+        <td mat-cell *matCellDef="let element" > {{element.type_grace_period}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="grace_period">
+        <th mat-header-cell *matHeaderCellDef>PERIODO DE GRACIA</th>
+        <td mat-cell *matCellDef="let element" > {{element.grace_period}} Meses</td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>PRECIO</th>
+        <td mat-cell *matCellDef="let element" >{{element.currency}} {{element.price}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="initial_fee">
+        <th mat-header-cell *matHeaderCellDef>CUOTA INICIAL</th>
+        <td mat-cell *matCellDef="let element" >{{element.currency}} {{element.initial_fee}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="credit">
+        <th mat-header-cell *matHeaderCellDef>CREDITO</th>
+        <td mat-cell *matCellDef="let element" >{{element.currency}} {{element.credit}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button #tooltip="matTooltip"
+          matTooltip="Editar" matTooltipPosition="below"
+          [routerLink]="['edicion', element.id]">
+           <mat-icon>
+            edit
+           </mat-icon>
+          </button>
+          <button mat-icon-button #tooltip="matTooltip"
+          matTooltip="Ver Plan de Pagos" matTooltipPosition="below"
+          [routerLink]="['view', element.id]">
+            <mat-icon>
+              visibility
+            </mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="ttdisplayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: ttdisplayedColumns;"></tr>
+    </table>
+  </div>
+    <mat-paginator
+      #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+    </mat-paginator>
+</div>
+
+
